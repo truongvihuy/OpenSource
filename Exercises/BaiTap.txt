@@ -1,0 +1,33 @@
+1.  cat /proc/cpuinfo /proc/meminfo > cpumem.info
+2.  cat /proc/cpuinfo | grep "processor" | wc -l > system.info
+    cat /proc/meminfo | grep "MemTotal" | rev |cut -d " " -f1,2 | rev >> system.info
+    cat /proc/version | cut -d" " -f3 >> system.info
+3.  ls -la /etc
+4.  ls -la /etc | wc -l
+5.  ls -la /etc | grep ^d 
+6.  ls -la /etc | grep ^d | wc -l
+7.  cat /etc/passwd | cut -d: -f1
+8.  cat /etc/passwd | cut -d: -f1 | wc -l
+9.  cat /etc/passwd | cut -d: -f1 | grep ^[aghz] | wc -l
+10. cat /etc/passwd | cut -d: -f1 | grep ^[d-q] | wc -l
+11. cat /etc/passwd | cut -d: -f1 | grep ^[^rxdg] | wc -l
+12. cat /etc/passwd | cut -d: -f7 | grep /bin/bash | wc -l
+13. cat /etc/passwd | cut -d: -f7 | grep -v /bin/bash
+14. ls -l /etc | awk '{print $9}' | grep yum
+15. ls -l /etc | awk '{print $9}' | grep [.]conf$
+16. ls -l /etc | awk '{print $9}' | grep ^yum
+17. cat /etc/passwd | cut -d: -f1,3 | sort > user.txt
+18. cat user.txt | cut -d: -f1 | head -5
+19. cat /etc/passwd | cut -d: -f3 | sort -nr | head -1
+    cat /etc/passwd | cut -d: -f3 | sort -n | tail -1
+20. ls -l /tmp | awk'{print $3}' | grep ^sv$ | wc -l
+21. ls -l /var | grep ^d | awk'{print $3}' | grep -v ^root$ | wc -l
+22. ls -l /etc | awk'{print $9}' | grep -v [.] | wc -l
+23. ls -l /etc | awk'{print $9}' | grep [.] | wc -l
+24. cut /etc/passwd -d: -f3 | grep ^[0-9]$
+25. grep `cut /etc/passwd -d: -f3 | sort -n | tail -1` /etc/passwd
+    cat /etc/passwd | cut -d: -f1,3  | sort -t: -k2n |tail -1
+26. cut /etc/passwd -d: -f3 | grep ^[1-9][0-9]$
+27. cut /etc/passwd -d: -f3 | grep -v ^[1-9][0-9]$ 
+28. ls -l /etc | grep ^- | awk '{print $9}' | grep [.][a-z0-9][a-z0-9][a-z0-9][a-z0-9]$
+29. ls -l /etc | awk '{print $9}' | cut -d. -f1 

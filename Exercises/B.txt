@@ -1,0 +1,11 @@
+1. su 
+   tar -cf /tmp/backup.tar /ect/passwd
+2. ls -l /tmp/backup.tar | awk '{print $5}' 
+3. gzip /tmp/backup.tar
+  (tar -czf /tmp/backup.tar.gz /etc/passwd)
+   ls -l /tmp/backup.tar.gz | awk '{print $5}'
+4. tar -xzf /tmp/backup.tar.gz
+   tar -cjf /tmp/backup.tar.bz2 etc/passwd
+  (bzip2 /tmp/backup.tar)
+   ls -l /tmp/backup.tar.bz2 | awk '{print $5}'
+  (tar -xjf /tmp/backup.tar.bz2)

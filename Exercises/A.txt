@@ -1,0 +1,9 @@
+2. ls -la
+3. mkdir report_jan report_feb report_mar graph_jan graph_feb graph_mar
+4. mkdir project project/graph project/report
+5. mv report* project/report
+   mv graph* project/graph
+6. rmdir project/report/report_jan
+(  rm -r project/report/report_jan )
+7. cd project/report
+   cp -r ../graph/graph* .
